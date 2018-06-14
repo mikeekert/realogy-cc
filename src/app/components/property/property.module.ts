@@ -6,6 +6,7 @@ import { ListingComponent } from './listing/listing.component';
   imports: [
     CommonModule
   ],
-  declarations: [ListingComponent]
+  declarations: [ListingComponent],
+  exports: [ListingComponent]
 })
 export class PropertyModule { }

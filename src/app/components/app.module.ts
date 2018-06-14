@@ -9,10 +9,8 @@ import {WeatherModule} from './weather/weather.module';
 import {PropertyModule} from './property/property.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [FooterComponent, HeaderComponent, AppComponent],
   imports: [
-    FooterComponent,
-    HeaderComponent,
     BrowserModule,
     AppointmentModule,
     WeatherModule,
