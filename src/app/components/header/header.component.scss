@@ -1,15 +1,24 @@
-header {
+.header {
   height: 105px;
   width: 100%;
   background-color: #c7c7c7;
   box-shadow: 0 2px 2px #e7e7e7;
-
-  .heading {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    float: left;
-    padding-left: 40px;
-    color: #515050;
-  }
+  position: fixed;
+  top: 0;
+  transition: all .5s;
 }
+
+.header--small {
+  height: 45px;
+}
+
+.header__heading {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  float: left;
+  padding-left: 40px;
+  color: #515050;
+}
+
+
