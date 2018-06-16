@@ -1,11 +1,10 @@
 section {
   width: 100%;
-  height: 150px;
+  padding: 0 40px;
 
-  .heading {
-    display: flex;
+  .header {
+    padding: 35px 0;
     height: 100%;
-    align-items: center;
     color: #515050;
     text-align: center;
   }
