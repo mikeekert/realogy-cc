@@ -1,0 +1,61 @@
+.listing {
+  padding: 25px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.listing__image {
+  background-image: url('https://m.cbhomes.com/p/1/4962947/41F163a0cE354B5/original.jpg');
+  background-position: center;
+  border-radius: 20px;
+  height: 400px;
+  width: 40%;
+}
+
+.listing__cont {
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  padding: 0 50px;
+  margin: 125px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+
+.listing__details {
+  flex: auto;
+  display: flex;
+  & div:nth-child(2){
+    border-right: 1px solid lightgrey;
+  }
+}
+
+.listing__data {
+  color: #747474;
+  margin: 5px 0;
+  width: 165px;
+  span {
+    color: lightgray;
+    float: right;
+  }
+}
+
+.listing__prop {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  padding-bottom: 15px;
+}
+
+.listing__prop--cost {
+  font-size: 36px;
+  color: rgb(65, 65, 65);
+}
+
+.listing__prop--address {
+  font-size: 20px;
+  font-weight: 300;
+  color: rgb(161, 161, 161);
+}
