@@ -9,6 +9,7 @@ import {FooterComponent} from './footer/footer.component';
 import {AppointmentModule} from './appointment/appointment.module';
 import {WeatherobjModule} from './weather/weatherobj.module';
 import {PropertyModule} from './property/property.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [FooterComponent, HeaderComponent, AppComponent],
@@ -18,7 +19,8 @@ import {PropertyModule} from './property/property.module';
     WeatherobjModule,
     PropertyModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
