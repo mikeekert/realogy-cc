@@ -39,6 +39,9 @@
     border-right: 1px solid lightgrey;
     flex:1;
   }
+  & > div:nth-child(3) {
+    padding-left:3%;
+  }
 }
 
 .listing__data {
