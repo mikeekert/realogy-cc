@@ -1,11 +1,13 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {AppointmentModule} from './appointment/appointment.module';
-import {WeatherModule} from './weather/weather.module';
+import {WeatherobjModule} from './weather/weatherobj.module';
 import {PropertyModule} from './property/property.module';
 
 @NgModule({
@@ -13,8 +15,10 @@ import {PropertyModule} from './property/property.module';
   imports: [
     BrowserModule,
     AppointmentModule,
-    WeatherModule,
-    PropertyModule
+    WeatherobjModule,
+    PropertyModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
