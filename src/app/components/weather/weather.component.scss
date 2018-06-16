@@ -1,0 +1,17 @@
+.weather {
+  color: #515050;
+  height: 325px;
+  width: 100%;
+  background-color: #F1F1F1;
+  text-align: center;
+}
+
+.weather__header {
+  padding: 45px 0;
+}
+
+.weather__form {
+  input {
+    margin-right: 25px;
+  }
+}

@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {WeatherObj, ApiResponse} from '../../models/weather';
+import {WeatherObj} from '../../models/weather';
+import {WeatherService} from '../../services/weather.service';
+import {FormControl, FormGroup} from '@angular/forms';
 
 
 @Component({
@@ -9,24 +11,28 @@ import {WeatherObj, ApiResponse} from '../../models/weather';
 })
 export class WeatherComponent implements OnInit {
 
-  WeatherPost: WeatherObj;
+  weatherData: WeatherObj;
+  zipCode: FormGroup;
+  zip: number;
 
-  constructor() {
+  constructor(private weatherService: WeatherService) {
+    this.zipCode = new FormGroup({
+      'zipcode': new FormControl(this.zip),
+    });
   }
 
   ngOnInit() {
-    const dataObj = {
-      'weather': [{
-          'id': 500,
-          'main': 'Rain',
-          'description': 'light rain',
-          'icon': '10d'
-        }],
-      'main': {
-        'temp': 200
-      }
-    };
-    this.WeatherPost = new WeatherObj(dataObj);
-    console.log(this.WeatherPost);
+    this.zip = null;
+  }
+
+  sendZip() {
+    console.log(this.zipCode.value);
+    this
+      .weatherService.getWeather(this.zipCode.value)
+      .subscribe(data => {
+        this.weatherData = new WeatherObj(data);
+      }, (error) => {
+        return error;
+      });
   }
 }
