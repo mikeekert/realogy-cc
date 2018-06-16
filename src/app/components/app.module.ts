@@ -5,7 +5,7 @@ import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {AppointmentModule} from './appointment/appointment.module';
-import {WeatherModule} from './weather/weather.module';
+import {WeatherobjModule} from './weather/weatherobj.module';
 import {PropertyModule} from './property/property.module';
 
 @NgModule({
@@ -13,7 +13,7 @@ import {PropertyModule} from './property/property.module';
   imports: [
     BrowserModule,
     AppointmentModule,
-    WeatherModule,
+    WeatherobjModule,
     PropertyModule
   ],
   providers: [],

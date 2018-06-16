@@ -1,10 +1,10 @@
-import { WeatherModule } from './weather.module';
+import { WeatherobjModule } from './weatherobj.module';
 
-describe('WeatherModule', () => {
-  let weatherModule: WeatherModule;
+describe('WeatherobjModule', () => {
+  let weatherModule: WeatherobjModule;
 
   beforeEach(() => {
-    weatherModule = new WeatherModule();
+    weatherModule = new WeatherobjModule();
   });
 
   it('should create an instance', () => {

@@ -9,4 +9,6 @@ import {WeatherComponent} from './weather.component';
   declarations: [WeatherComponent],
   exports: [WeatherComponent]
 })
-export class WeatherModule { }
+export class WeatherobjModule {
+
+}

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {WeatherObj, ApiResponse} from '../../models/weather';
+
 
 @Component({
   selector: 'app-weather',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeatherComponent implements OnInit {
 
-  constructor() { }
+  WeatherPost: WeatherObj;
 
-  ngOnInit() {
+  constructor() {
   }
 
+  ngOnInit() {
+    const dataObj = {
+      'weather': [{
+          'id': 500,
+          'main': 'Rain',
+          'description': 'light rain',
+          'icon': '10d'
+        }],
+      'main': {
+        'temp': 200
+      }
+    };
+    this.WeatherPost = new WeatherObj(dataObj);
+    console.log(this.WeatherPost);
+  }
 }
