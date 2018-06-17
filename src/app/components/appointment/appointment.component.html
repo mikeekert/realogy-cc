@@ -1,24 +1,45 @@
 <section>
   <div class="appointment">
-    <div>
-      <form [formGroup]="appointmentForm" class="appointment__form">
+    <div [hidden]="formDir.submitted">
+      <form [formGroup]="appointmentForm" class="appointment__form" #formDir="ngForm">
         <p class="appointment__header header__label">SCHEDULE APPOINTMENT</p>
-        <input class="appointment__input fname" type="name" placeholder="First Name" formControlName="firstname">
+        <input class="appointment__input fname" type="name" placeholder="First Name" formControlName="fname">
+        <div *ngIf="fname.invalid && (fname.dirty || fname.touched)"
+             class="alert alert-danger">
+          <div *ngIf="fname.errors">
+            Required.
+          </div>
+        </div>
         <input class="appointment__input lname" type="name" placeholder="Last Name" formControlName="lastname">
         <input class="appointment__input email" type="email" placeholder="E-Mail" formControlName="email">
+        <div *ngIf="email.invalid && (email.dirty || email.touched)"
+             class="alert alert-danger">
+          <div *ngIf="email.errors">
+            Required.
+          </div>
+        </div>
         <div class="form-inline appointment__input date">
+          <div *ngIf="date.invalid && (date.dirty || date.touched)"
+               class="alert alert-danger">
+            <div *ngIf="date.errors">
+              Required
+            </div>
+          </div>
           <div class="form-group w-100">
             <div class="input-group w-100">
               <input class="form-control"
                      placeholder="Date"
                      name="dp"
                      ngbDatepicker
-                     #d="ngbDatepicker">
+                     #d="ngbDatepicker"
+                     formControlName="date"
+              >
               <div class="input-group-append">
                 <button
                   class="btn btn-outline-secondary"
                   (click)="d.toggle()"
-                  type="button">
+                  type="button"
+                  >
                   <span class="oi oi-calendar"></span>
                 </button>
               </div>
@@ -26,8 +47,9 @@
           </div>
         </div>
 
+
         <div class="class appointment__buttongrid">
-          <button class="appointment__button">SUBMIT</button>
+          <button class="appointment__button" [disabled]="appointmentForm.invalid">SUBMIT</button>
         </div>
       </form>
     </div>
