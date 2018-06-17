@@ -22,6 +22,12 @@ button {
   &:active {
     background-color: #688bc1;
   }
+  &:disabled {
+    opacity: 0.4;
+  }
+}
+
+.invalid {
 }
 
 .appointment__button, .weather__button {

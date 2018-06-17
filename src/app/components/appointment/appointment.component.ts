@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-appointment',
@@ -9,24 +9,36 @@ import {FormControl, FormGroup} from '@angular/forms';
 
 
 export class AppointmentComponent implements OnInit {
+  fname: FormControl;
+  lastname: FormControl;
+  email: FormControl;
+  date: FormControl;
+  appointmentForm: FormGroup
 
-  date: Date;
-  rangeDates: Date[];
-  minDate: Date;
-  maxDate: Date;
-  invalidDates: Array<Date>;
-  appointmentForm: FormGroup;
+  ngOnInit() {
+    this.fname = new FormControl('', Validators.required);
+    this.lastname = new FormControl('');
+    this.email = new FormControl('', Validators.required);
+    this.date = new FormControl('', Validators.required);
 
-
-  constructor() {
     this.appointmentForm = new FormGroup({
-      'firstname': new FormControl(),
-      'lastname': new FormControl(),
-      'email': new FormControl(),
-      'date': new FormControl()
+      fname: this.fname,
+      lastname: this.lastname,
+      email: this.email,
+      date: this.date
     });
   }
 
-  ngOnInit() {
+  // appointmentForm = new FormGroup({
+  //   fname: new FormControl('', [
+  //     Validators.required,
+  //   ]),
+  //   lname: new FormControl(),
+  //   email: new FormControl(),
+  //   date: new FormControl()
+  // });
+
+  constructor(private formBuilder: FormBuilder) {
+
   }
 }
