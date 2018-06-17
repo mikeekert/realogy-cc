@@ -33,7 +33,6 @@ export class WeatherComponent implements OnInit {
   weatherData: WeatherObj;
   zipCode: FormGroup;
   zip: number;
-  show = false;
 
   constructor(private weatherService: WeatherService) {
     this.zipCode = new FormGroup({

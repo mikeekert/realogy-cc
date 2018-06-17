@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ComponentType} from '@angular/cdk/portal';
-
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-appointment',
@@ -10,14 +9,24 @@ import {ComponentType} from '@angular/cdk/portal';
 
 
 export class AppointmentComponent implements OnInit {
-  minDate = new Date(2000, 0, 1);
-  maxDate = new Date(2020, 0, 1);
 
-  @Input()
-  calendarHeaderComponent: ComponentType<any>;
-  constructor() { }
+  date: Date;
+  rangeDates: Date[];
+  minDate: Date;
+  maxDate: Date;
+  invalidDates: Array<Date>;
+  appointmentForm: FormGroup;
+
+
+  constructor() {
+    this.appointmentForm = new FormGroup({
+      'firstname': new FormControl(),
+      'lastname': new FormControl(),
+      'email': new FormControl(),
+      'date': new FormControl()
+    });
+  }
 
   ngOnInit() {
   }
-
 }

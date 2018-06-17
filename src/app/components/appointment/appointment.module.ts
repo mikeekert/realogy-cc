@@ -1,16 +1,19 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {AppointmentComponent} from './appointment.component';
-import {MatDatepickerModule, MatFormField} from '@angular/material';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    MatDatepickerModule,
-    MatFormField
+    ReactiveFormsModule,
+    FormsModule,
+    NgbModule
   ],
   declarations: [AppointmentComponent],
-  exports: [AppointmentComponent, MatFormField, MatDatepickerModule]
+  exports: [AppointmentComponent]
 })
-export class AppointmentModule { }
+export class AppointmentModule {
+}
