@@ -10,6 +10,8 @@ import {AppointmentModule} from './appointment/appointment.module';
 import {WeatherobjModule} from './weather/weatherobj.module';
 import {PropertyModule} from './property/property.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 @NgModule({
   declarations: [FooterComponent, HeaderComponent, AppComponent],
@@ -20,7 +22,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     PropertyModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

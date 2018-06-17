@@ -1,3 +1,19 @@
-<p>
-  appointment works!
-</p>
+<section>
+  <div class="appointment">
+    <div class="appointment__form">
+      <p class="appointment__header header__label">SCHEDULE APPOINTMENT</p>
+      <input class="appointment__input fname" type="text" placeholder="First Name">
+      <input class="appointment__input lname" type="text" placeholder="Last Name">
+      <input class="appointment__input email" type="text" placeholder="E-Mail">
+      <mat-form-field class="example-full-width">
+        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <div class="class appointment__buttongrid">
+        <button class="appointment__button">SUBMIT</button>
+      </div>
+    </div>
+  </div>
+
+</section>
