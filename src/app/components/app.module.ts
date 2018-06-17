@@ -1,6 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 import {AppComponent} from './app.component';
@@ -10,6 +9,7 @@ import {AppointmentModule} from './appointment/appointment.module';
 import {WeatherobjModule} from './weather/weatherobj.module';
 import {PropertyModule} from './property/property.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [FooterComponent, HeaderComponent, AppComponent],
@@ -19,8 +19,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     WeatherobjModule,
     PropertyModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,11 +1,12 @@
 
 input {
-  border: 1px solid #979797;
+  border: 1px solid #979797!important;
   border-radius: 5px;
   padding: 0 15px;
+  color: #515050!important;
   &::placeholder {
-    color: #979797;
-    font-weight: 300;
-    font-size: 20px;
+    color: #979797!important;
+    font-weight: 300!important;
+    font-size: 20px!important;
   }
 }

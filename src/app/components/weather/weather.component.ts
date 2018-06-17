@@ -2,14 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {WeatherObj} from '../../models/weather';
 import {WeatherService} from '../../services/weather.service';
 import {FormControl, FormGroup} from '@angular/forms';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition, keyframes
-} from '@angular/animations';
-import {debug} from 'util';
+import {trigger, state, style, animate, transition, keyframes} from '@angular/animations';
 
 
 @Component({
@@ -40,7 +33,6 @@ export class WeatherComponent implements OnInit {
   weatherData: WeatherObj;
   zipCode: FormGroup;
   zip: number;
-  show = false;
 
   constructor(private weatherService: WeatherService) {
     this.zipCode = new FormGroup({
