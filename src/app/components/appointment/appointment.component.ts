@@ -1,10 +1,12 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {NgbDatepickerConfig, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-appointment',
   templateUrl: './appointment.component.html',
-  styleUrls: ['./appointment.component.scss']
+  styleUrls: ['./appointment.component.scss'],
+  providers: [NgbDatepickerConfig]
 })
 
 
@@ -18,7 +20,7 @@ export class AppointmentComponent implements OnInit {
   ngOnInit() {
     this.fname = new FormControl('', Validators.required);
     this.lastname = new FormControl('');
-    this.email = new FormControl('', Validators.required);
+    this.email = new FormControl('', [Validators.required, Validators.email]);
     this.date = new FormControl('', Validators.required);
 
     this.appointmentForm = new FormGroup({
@@ -29,16 +31,9 @@ export class AppointmentComponent implements OnInit {
     });
   }
 
-  // appointmentForm = new FormGroup({
-  //   fname: new FormControl('', [
-  //     Validators.required,
-  //   ]),
-  //   lname: new FormControl(),
-  //   email: new FormControl(),
-  //   date: new FormControl()
-  // });
-
-  constructor(private formBuilder: FormBuilder) {
-
+  constructor(config: NgbDatepickerConfig) {
+    const now = new Date();
+    config.minDate = {year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate()};
+    config.maxDate = {year: 2099, month: 12, day: 31};
   }
 }

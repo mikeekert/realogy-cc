@@ -7,7 +7,7 @@
                [class.invalid]="fname.invalid && (fname.dirty || fname.touched)">
         <input class="appointment__input lname" type="name" placeholder="Last Name" formControlName="lastname">
         <input class="appointment__input email" type="email" placeholder="E-Mail" formControlName="email"
-               [class.invalid]="email.invalid && (email.dirty || email.touched)">
+               [class.invalid]="email.invalid && (email.dirty || email.touched)" email>
         <div class="form-inline appointment__input date">
           <div class="form-group w-100">
             <div class="input-group w-100">
@@ -18,6 +18,8 @@
                      #d="ngbDatepicker"
                      formControlName="date"
                      [class.invalid]="date.invalid && (date.dirty || date.touched)"
+                     [readonly]="true"
+                     (click)="d.toggle()"
               >
               <div class="input-group-append">
                 <button
@@ -36,6 +38,9 @@
           <button class="appointment__button" [disabled]="appointmentForm.invalid">SUBMIT</button>
         </div>
       </form>
+    </div>
+    <div *ngIf="formDir.submitted">
+      THANKS!
     </div>
   </div>
 
