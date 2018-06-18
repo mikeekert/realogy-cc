@@ -6,7 +6,19 @@
   <div class="listing__details">
     <!--<div class="listing__image" [ngStyle]="{'background-image': 'url(' + Listing.Image + ')'}"></div>-->
     <div class="imagecont">
-      <img class="listing__image" [src]="Listing.Image">
+      <!--<img class="listing__image" [src]="Listing.Image">-->
+
+      <picture>
+        <source
+          srcset="{{Listing.Image}}main.jpg, {{Listing.Image}}original.jpg 2x"
+          media="(min-width: 800px)"
+          class="listing__image">
+        <img
+          srcset="{{Listing.Image}}s23cc.jpg, {{Listing.Image}}m23cc.jpg 2x"
+          class="listing__image">
+      </picture>
+
+
     </div>
     <div class="listing__cont">
       <div class="listing__data">
