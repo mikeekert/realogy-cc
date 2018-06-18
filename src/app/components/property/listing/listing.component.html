@@ -1,10 +1,10 @@
 <div class="listing">
   <div class="listing__prop">
-    <p class="listing__prop--cost">$500,000</p>
-    <p class="listing__prop--address">123 town st</p>
+    <p class="listing__prop--cost">{{ Listing.Cost |  currency : 'USD' : 'symbol' : '1.0'}}</p>
+    <p class="listing__prop--address">{{ Listing.Address }}</p>
   </div>
   <div class="listing__details">
-    <div class="listing__image"></div>
+    <div class="listing__image" [ngStyle]="{'background-image': 'url(' + Listing.Image + ')'}"></div>
     <div class="listing__cont">
       <div class="listing__data">
         <div>
@@ -12,8 +12,8 @@
           <p class="listing__data--left">Bathrooms:</p>
         </div>
         <div>
-          <p class="listing__data--left">3</p>
-          <p class="listing__data--left">4</p>
+          <p class="listing__data--left">{{ Listing.Bed }}</p>
+          <p class="listing__data--left">{{ Listing.Bath }}</p>
         </div>
       </div>
     </div>
@@ -26,12 +26,11 @@
           <p class="listing__data--right">Added:</p>
         </div>
         <div>
-          <p class="listing__data--right">$17,00</p>
-          <p class="listing__data--right">Active</p>
-          <p class="listing__data--right">Single - Family Home</p>
-          <p class="listing__data--right">April 18th, 2017</p>
+          <p class="listing__data--right">{{ Listing.Taxes |  currency : 'USD' : 'symbol' : '1.0'}}</p>
+          <p class="listing__data--right">{{ Listing.Status }}</p>
+          <p class="listing__data--right">{{ Listing.Type }}</p>
+          <p class="listing__data--right">{{ Listing.Added }}</p>
         </div>
-
       </div>
     </div>
   </div>

@@ -1,8 +1,6 @@
-<section>
+<section *ngIf="Listings">
   <div class="header">
     <p class="header__label">PROPERTY DETAILS</p>
   </div>
-  <app-listing></app-listing>
-  <app-listing></app-listing>
-  <app-listing></app-listing>
+  <app-listing *ngFor="let i of Listings" [Listing]="i"></app-listing>
 </section>

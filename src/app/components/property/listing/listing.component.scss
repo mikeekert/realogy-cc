@@ -9,7 +9,6 @@
 }
 
 .listing__image {
-  background-image: url('https://m.cbhomes.com/p/1/4962947/41F163a0cE354B5/original.jpg');
   background-size: cover;
   background-position: center;
   border-radius: 15px;
@@ -90,5 +89,14 @@
 @media screen and (min-width: 975px) {
   div {
     font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .listing__prop--address {
+    font-size: 2.5vw;
+  }
+  .listing__prop--cost {
+    font-size: 4vw;
   }
 }
