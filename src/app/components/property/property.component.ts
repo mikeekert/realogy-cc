@@ -10,11 +10,11 @@ import {Listing} from '../../models/listing';
 export class PropertyComponent implements OnInit {
   Listings: Listing[] = [];
 
-  constructor(private propertyservice: PropertyService) {
+  constructor(private propertyService: PropertyService) {
   }
 
   ngOnInit() {
-    this.propertyservice.getListings().subscribe(data =>
+    this.propertyService.getListings().subscribe(data =>
       data.forEach((i) => {
         this.Listings.push(new Listing(i));
       })

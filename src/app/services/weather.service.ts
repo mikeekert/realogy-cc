@@ -17,7 +17,7 @@ export class WeatherService {
   getWeather(zip) {
     const feedApiUrn = `weather?zip=${zip}&appid=b51580d4aa072f200e5e9d23f569a333`;
     const apiUrl = `${this.apiUriBase}/${feedApiUrn}`;
-    const testUrl = './assets/dataObj.json';
+    const testUrl = './assets/dataObj.json'; // use for mock data
     return this.http.get<ApiResponse>(testUrl);
   }
 }
