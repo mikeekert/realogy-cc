@@ -24,9 +24,9 @@ interface Temp {
 }
 
 interface Weather {
-  'main'?: string;
-  'description'?: string;
-  'icon'?: string;
+  'main': string;
+  'description': string;
+  'icon': string;
 }
 
 
