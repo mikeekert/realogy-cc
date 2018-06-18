@@ -8,8 +8,8 @@ export class WeatherObj {
     this.Weather = api.weather[0];
     this.City = api.name;
   }
-  static convertK(K) {
-    return Math.ceil(((K - 273.15 ) * 1.8) + 32);
+  static ConvertKelvinToFahrenheit(tempInkelvin: number) {
+    return Math.ceil(((tempInkelvin - 273.15 ) * 1.8) + 32);
   }
 }
 

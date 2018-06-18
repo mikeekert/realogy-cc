@@ -6,7 +6,7 @@ import {ApiResponse} from '../models/weather';
   providedIn: 'root'
 })
 export class WeatherService {
-  private apiUriBase: string;
+  private readonly apiUriBase: string;
 
   constructor(private http: HttpClient) {
     this.apiUriBase = 'http://api.openweathermap.org/data/2.5';
@@ -20,7 +20,4 @@ export class WeatherService {
     const testUrl = './assets/dataObj.json';
     return this.http.get<ApiResponse>(testUrl);
   }
-
-
 }
-

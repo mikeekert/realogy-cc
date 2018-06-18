@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PropertyService} from '../../services/property.service';
-import {Listing, ListingApiResponse} from '../../models/listing';
+import {Listing} from '../../models/listing';
 
 @Component({
   selector: 'app-property',
@@ -17,7 +17,6 @@ export class PropertyComponent implements OnInit {
     this.propertyservice.getListings().subscribe(data =>
       data.forEach((i) => {
         this.Listings.push(new Listing(i));
-        console.log(this.Listings);
       })
     );
   }
