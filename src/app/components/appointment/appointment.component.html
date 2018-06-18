@@ -26,22 +26,37 @@
                   class="btn btn-outline-secondary"
                   (click)="d.toggle()"
                   type="button"
-                  >
+                >
                   <span class="oi oi-calendar"></span>
                 </button>
               </div>
             </div>
           </div>
         </div>
-
         <div class="class appointment__buttongrid">
-          <button class="appointment__button" [disabled]="appointmentForm.invalid">SUBMIT</button>
+          <button class="appointment__button" [disabled]="appointmentForm.invalid" (click)="send()">SUBMIT</button>
         </div>
       </form>
     </div>
     <div *ngIf="formDir.submitted">
-      THANKS!
+      <div class="w-50 m-auto p-3 header__label" *ngIf="complete">
+        <p>APPOINTMENT COMPLETE:</p>
+        <P>NAME: {{displayAppointment.fname}} {{displayAppointment.lastname}}</P>
+        <p>E-MAIL: {{displayAppointment.email}}</p>
+        <p>DATE: {{ displayAppointment.date.month }}-{{ displayAppointment.date.day }}-{{ displayAppointment.date.year
+          }}</p>
+      </div>
+      <div *ngIf="pending">
+        <div class="progress w-50 m-auto">
+          <div class="progress-bar progress-bar-striped progress-bar-animated pendingbar"
+               role="progressbar"
+               style="width: 0%" [class.pendingbar]="pending"></div>
+        </div>
+      </div>
     </div>
+
+
   </div>
+
 
 </section>

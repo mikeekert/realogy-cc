@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {NgbDatepickerConfig, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import {NgbDatepickerConfig} from '@ng-bootstrap/ng-bootstrap';
+import {Appointment} from '../../models/appointment';
 
 @Component({
   selector: 'app-appointment',
@@ -11,12 +12,23 @@ import {NgbDatepickerConfig, NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 
 export class AppointmentComponent implements OnInit {
+  @Input() displayAppointment: Appointment;
+  appointment: Appointment;
+
   fname: FormControl;
   lastname: FormControl;
   email: FormControl;
   date: FormControl;
-  appointmentForm: FormGroup
+  appointmentForm: FormGroup;
 
+  pending: boolean;
+  complete: boolean;
+
+  constructor(config: NgbDatepickerConfig) {
+    const now = new Date();
+    config.minDate = {year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate()};
+    config.maxDate = {year: 2099, month: 12, day: 31};
+  }
   ngOnInit() {
     this.fname = new FormControl('', Validators.required);
     this.lastname = new FormControl('');
@@ -31,9 +43,17 @@ export class AppointmentComponent implements OnInit {
     });
   }
 
-  constructor(config: NgbDatepickerConfig) {
-    const now = new Date();
-    config.minDate = {year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate()};
-    config.maxDate = {year: 2099, month: 12, day: 31};
+  send() {
+    this.pending = true;
+    setTimeout(() => {
+      this.pending = false;
+      this.complete = true;
+      this.displayAppointment = this.appointmentPending();
+    }, 3000);
+  }
+
+  appointmentPending(): Appointment {
+    const formApp = this.appointmentForm.value;
+    return new Appointment(formApp);
   }
 }
