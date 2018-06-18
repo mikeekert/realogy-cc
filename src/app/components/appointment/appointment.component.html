@@ -3,9 +3,9 @@
     <div [hidden]="formDir.submitted">
       <form [formGroup]="appointmentForm" class="appointment__form" #formDir="ngForm">
         <p class="appointment__header header__label">SCHEDULE APPOINTMENT</p>
-        <input class="appointment__input fname" type="name" placeholder="First Name" formControlName="fname"
+        <input class="appointment__input fname" type="text" placeholder="First Name" formControlName="fname"
                [class.invalid]="fname.invalid && (fname.dirty || fname.touched)">
-        <input class="appointment__input lname" type="name" placeholder="Last Name" formControlName="lastname">
+        <input class="appointment__input lname" type="text" placeholder="Last Name" formControlName="lastname">
         <input class="appointment__input email" type="email" placeholder="E-Mail" formControlName="email"
                [class.invalid]="email.invalid && (email.dirty || email.touched)" email>
         <div class="form-inline appointment__input date">
@@ -43,14 +43,15 @@
         <p>APPOINTMENT COMPLETE:</p>
         <P>NAME: {{displayAppointment.fname}} {{displayAppointment.lastname}}</P>
         <p>E-MAIL: {{displayAppointment.email}}</p>
-        <p>DATE: {{ displayAppointment.date.month }}-{{ displayAppointment.date.day }}-{{ displayAppointment.date.year
+        <p>DATE: {{ displayAppointment.date.month }} - {{ displayAppointment.date.day }} - {{
+          displayAppointment.date.year
           }}</p>
       </div>
       <div *ngIf="pending">
         <div class="progress w-50 m-auto">
           <div class="progress-bar progress-bar-striped progress-bar-animated pendingbar"
                role="progressbar"
-               style="width: 0%" [class.pendingbar]="pending"></div>
+               style="width: 0" [class.pendingbar]="pending"></div>
         </div>
       </div>
     </div>

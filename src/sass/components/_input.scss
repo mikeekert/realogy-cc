@@ -4,6 +4,7 @@ input {
   border-radius: 5px;
   padding: 0 15px;
   color: #515050!important;
+  height: 45px;
   &::placeholder {
     color: #979797!important;
     font-weight: 300!important;
@@ -13,7 +14,6 @@ input {
     background-color: rgba(255, 0, 0, 0.15);
   }
   &[readonly] {
-
     background-color: white!important;
   }
 }

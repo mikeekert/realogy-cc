@@ -51,12 +51,11 @@ export class WeatherComponent implements OnInit {
         .weatherService.getWeather(this.zipCode.value)
         .subscribe(data => {
           this.weatherData = new WeatherObj(data);
-          this.weatherData.Temp = WeatherObj.convertK(this.weatherData.Temp);
+          this.weatherData.Temp = WeatherObj.ConvertKelvinToFahrenheit(this.weatherData.Temp);
         }, (error) => {
           return error;
         });
     }, 600);
-
   }
 
 }
