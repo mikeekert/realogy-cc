@@ -4,7 +4,10 @@
     <p class="listing__prop--address">{{ Listing.Address }}</p>
   </div>
   <div class="listing__details">
-    <div class="listing__image" [ngStyle]="{'background-image': 'url(' + Listing.Image + ')'}"></div>
+    <!--<div class="listing__image" [ngStyle]="{'background-image': 'url(' + Listing.Image + ')'}"></div>-->
+    <div class="imagecont">
+      <img class="listing__image" [src]="Listing.Image">
+    </div>
     <div class="listing__cont">
       <div class="listing__data">
         <div>
