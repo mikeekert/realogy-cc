@@ -1,42 +1,45 @@
 <div class="listing">
   <div class="listing__prop">
-    <p class="listing__prop--cost">{{ Listing.Cost |  currency : 'USD' : 'symbol' : '1.0'}}</p>
+    <p class="listing__prop--cost">{{ Listing.Cost | currency : 'USD' : 'symbol' : '1.0'}}</p>
     <p class="listing__prop--address">{{ Listing.Address }}</p>
   </div>
   <div class="listing__details">
     <div class="imagecont">
-
       <picture>
         <source
-          srcset="{{Listing.Image}}main.jpg, {{Listing.Image}}original.jpg 2x"
+          srcset="{{Listing.Image}}m23cc.jpg, {{Listing.Image}}original.jpg 2x"
           media="(min-width: 800px)"
           class="listing__image">
         <img
           srcset="{{Listing.Image}}s23cc.jpg, {{Listing.Image}}m23cc.jpg 2x"
           class="listing__image">
       </picture>
-
-
     </div>
     <div class="d-flex listing__responsivecont">
       <div class="listing__cont left">
         <div class="listing__data">
-            <p class="listing__data--left">Bedrooms:</p>
-            <p class="listing__data--left">Bathrooms:</p>
-            <p class="listing__data--left"><span>{{ Listing.Bed }}</span></p>
-            <p class="listing__data--left"><span>{{ Listing.Bath }}</span></p>
+          <p class="listing__data--left">Bedrooms:</p>
+          <p class="listing__data--left">Bathrooms:</p>
+          <p class="listing__data--left">
+            <span>{{ Listing.Bed }}</span></p>
+          <p class="listing__data--left">
+            <span>{{ Listing.Bath }}</span></p>
         </div>
       </div>
       <div class="listing__cont right">
         <div class="listing__data">
-            <p class="listing__data--right">Taxes:</p>
-            <p class="listing__data--right">Status:</p>
-            <p class="listing__data--right">Type:</p>
-            <p class="listing__data--right">Added:</p>
-            <p class="listing__data--right"><span>{{ Listing.Taxes |  currency : 'USD' : 'symbol' : '1.0'}}</span></p>
-            <p class="listing__data--right"><span>{{ Listing.Status }}</span></p>
-            <p class="listing__data--right"><span>{{ Listing.Type }}</span></p>
-            <p class="listing__data--right"><span>{{ Listing.Added }}</span></p>
+          <p class="listing__data--right">Taxes:</p>
+          <p class="listing__data--right">Status:</p>
+          <p class="listing__data--right">Type:</p>
+          <p class="listing__data--right">Added:</p>
+          <p class="listing__data--right">
+            <span>{{ Listing.Taxes |  currency : 'USD' : 'symbol' : '1.0'}}</span></p>
+          <p class="listing__data--right">
+            <span>{{ Listing.Status }}</span></p>
+          <p class="listing__data--right">
+            <span>{{ Listing.Type }}</span></p>
+          <p class="listing__data--right">
+            <span>{{ Listing.Added }}</span></p>
         </div>
       </div>
     </div>
