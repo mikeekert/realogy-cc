@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     const nav = document.querySelector('.header');
     window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 100) {
+      if (window.pageYOffset > 30) {
        nav.classList.add('header--small');
       } else {
         nav.classList.remove('header--small');

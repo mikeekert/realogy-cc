@@ -1,3 +1,22 @@
-<p>
-  weather works!
-</p>
+<section>
+  <div class="weather">
+    <div class="weather__header header__label">
+      WEATHER
+    </div>
+    <div class="weather__form">
+      <form [formGroup]="zipCodeGroup" (ngSubmit)="sendZip()">
+      <input type="text" placeholder="Zip Code" formControlName="zipcode">
+      <button class="weather__button" [disabled]="zipCodeGroup.invalid">Submit</button>
+      </form>
+    </div>
+    <div class="weather__display"
+         *ngIf="weatherData"
+         [@fade]="'in'">
+      <p>{{ weatherData.City }}</p>
+      <p>{{ weatherData.Temp }} &#176; F</p>
+      <p><img src="http://openweathermap.org/img/w/{{weatherData.Weather.icon}}.png" alt=""> </p>
+      <p>{{ weatherData.Weather.main }} </p>
+    </div>
+  </div>
+</section>
+

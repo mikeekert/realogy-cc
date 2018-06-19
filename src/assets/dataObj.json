@@ -1,0 +1,13 @@
+{
+  "weather": [
+    {
+      "main": "Rain",
+      "description": "light rain",
+      "icon": "10d"
+    }
+  ],
+  "main": {
+    "temp": 285.68
+  },
+  "name": "Minneapolis"
+}

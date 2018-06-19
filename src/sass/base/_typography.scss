@@ -4,11 +4,12 @@
 body {
   color: $text-color;
   font: normal 125% / 1.4 $text-font-stack;
+  line-height: normal;
 }
 
 .header__label {
   font-family: 'Hind Siliguri', sans-serif;
   font-size: 24px;
   font-weight: 300;
-  letter-spacing: .45em;
+  letter-spacing: .2em;
 }
