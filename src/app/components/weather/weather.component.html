@@ -4,9 +4,9 @@
       WEATHER
     </div>
     <div class="weather__form">
-      <form [formGroup]="zipCode" (ngSubmit)="sendZip()">
+      <form [formGroup]="zipCodeGroup" (ngSubmit)="sendZip()">
       <input type="text" placeholder="Zip Code" formControlName="zipcode">
-      <button class="weather__button" >Submit</button>
+      <button class="weather__button" [disabled]="zipCodeGroup.invalid">Submit</button>
       </form>
     </div>
     <div class="weather__display"
