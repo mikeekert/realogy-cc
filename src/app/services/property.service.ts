@@ -10,6 +10,8 @@ export class PropertyService {
   getListings() {
     return this.http.get<ListingApiResponse[]>('/assets/listings.json');
   }
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient) {
+  }
 }
 
