@@ -4,9 +4,7 @@
     <p class="listing__prop--address">{{ Listing.Address }}</p>
   </div>
   <div class="listing__details">
-    <!--<div class="listing__image" [ngStyle]="{'background-image': 'url(' + Listing.Image + ')'}"></div>-->
     <div class="imagecont">
-      <!--<img class="listing__image" [src]="Listing.Image">-->
 
       <picture>
         <source
@@ -20,33 +18,28 @@
 
 
     </div>
-    <div class="listing__cont">
-      <div class="listing__data">
-        <div>
-          <p class="listing__data--left">Bedrooms:</p>
-          <p class="listing__data--left">Bathrooms:</p>
+    <div class="d-flex listing__responsivecont">
+      <div class="listing__cont left">
+        <div class="listing__data">
+            <p class="listing__data--left">Bedrooms:</p>
+            <p class="listing__data--left">Bathrooms:</p>
+            <p class="listing__data--left">{{ Listing.Bed }}</p>
+            <p class="listing__data--left">{{ Listing.Bath }}</p>
         </div>
-        <div>
-          <p class="listing__data--left">{{ Listing.Bed }}</p>
-          <p class="listing__data--left">{{ Listing.Bath }}</p>
+      </div>
+      <div class="listing__cont right">
+        <div class="listing__data">
+            <p class="listing__data--right">Taxes:</p>
+            <p class="listing__data--right">Status:</p>
+            <p class="listing__data--right">Type:</p>
+            <p class="listing__data--right">Added:</p>
+            <p class="listing__data--right">{{ Listing.Taxes |  currency : 'USD' : 'symbol' : '1.0'}}</p>
+            <p class="listing__data--right">{{ Listing.Status }}</p>
+            <p class="listing__data--right">{{ Listing.Type }}</p>
+            <p class="listing__data--right">{{ Listing.Added }}</p>
         </div>
       </div>
     </div>
-    <div class="listing__cont">
-      <div class="listing__data">
-        <div>
-          <p class="listing__data--right">Taxes:</p>
-          <p class="listing__data--right">Status:</p>
-          <p class="listing__data--right">Type:</p>
-          <p class="listing__data--right">Added:</p>
-        </div>
-        <div>
-          <p class="listing__data--right">{{ Listing.Taxes |  currency : 'USD' : 'symbol' : '1.0'}}</p>
-          <p class="listing__data--right">{{ Listing.Status }}</p>
-          <p class="listing__data--right">{{ Listing.Type }}</p>
-          <p class="listing__data--right">{{ Listing.Added }}</p>
-        </div>
-      </div>
-    </div>
+
   </div>
 </div>
