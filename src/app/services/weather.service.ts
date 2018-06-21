@@ -9,7 +9,7 @@ export class WeatherService {
   private readonly apiUriBase: string;
 
   constructor(private http: HttpClient) {
-    this.apiUriBase = 'http://api.openweathermap.org/data/2.5';
+    this.apiUriBase = 'https://api.openweathermap.org/data/2.5';
   }
 
   // http://api.openweathermap.org/data/2.5/weather?zip=55420&appid=b51580d4aa072f200e5e9d23f569a333
